@@ -19,22 +19,11 @@ export class App extends Component {
           
         </nav>
         <Switch>
-          <Route exact path='/'>
-            <Redirect to='/page1' />
-            <Page1 />
-          </Route>
-          <Route exact path='/page1'>
-            <Redirect to='/page1' />
-            <Page1 />
-          </Route>
-          <Route exact path='/page2'>
-            <Redirect to='/page2' />
-            <Page2 />
-          </Route>
-          <Route  path='*'>
-            <Redirect to='/notfound' />
-            <NotFound/>
-          </Route>
+        <Redirect exact from="/" to="/page1" />
+          <Route path="/page1" component={Page1} />
+          <Route path="/page2" component={Page2} />
+          <Route path="*" component={NotFound} />
+           
         </Switch>
         {/* Aca tienes que agreager algo para que las rutas funcionen*/}
       </div>
